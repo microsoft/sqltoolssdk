@@ -87,8 +87,7 @@ opening and closing of files, the changing of configuration, etc.</p>
               <h6><strong>Assembly</strong>:Microsoft.SqlTools.ServiceLayer.dll</h6>
               <h5 id="Microsoft_SqlTools_ServiceLayer_Workspace_WorkspaceService_1_syntax">Syntax</h5>
               <div class="codewrapper">
-                <pre><code class="lang-csharp hljs">public class WorkspaceService&lt;TConfig&gt;
-    where TConfig : class, new ()</code></pre>
+                <pre><code class="lang-csharp hljs">public class WorkspaceService&lt;TConfig&gt; : object where TConfig : class, new ()</code></pre>
               </div>
               <h3 id="constructors">Constructors
               </h3>

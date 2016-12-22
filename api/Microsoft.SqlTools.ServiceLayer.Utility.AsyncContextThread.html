@@ -87,7 +87,7 @@ and establishing an AsyncContext in it.</p>
               <h6><strong>Assembly</strong>:Microsoft.SqlTools.ServiceLayer.dll</h6>
               <h5 id="Microsoft_SqlTools_ServiceLayer_Utility_AsyncContextThread_syntax">Syntax</h5>
               <div class="codewrapper">
-                <pre><code class="lang-csharp hljs">public class AsyncContextThread</code></pre>
+                <pre><code class="lang-csharp hljs">public class AsyncContextThread : object</code></pre>
               </div>
               <h3 id="constructors">Constructors
               </h3>
@@ -128,12 +128,12 @@ and establishing an AsyncContext in it.</p>
               </h3>
               <span class="small pull-right mobile-hide">
                 <span class="divider">|</span>
-                <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_Utility_AsyncContextThread_Run_System_Func_System_Threading_Tasks_Task__.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.Utility.AsyncContextThread.Run(System.Func%7BSystem.Threading.Tasks.Task%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_Utility_AsyncContextThread_Run_Func_Task__.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.Utility.AsyncContextThread.Run(Func%7BTask%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
                 <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/Utility/AsyncContextThread.cs/#L53">View Source</a>
               </span>
-              <h4 id="Microsoft_SqlTools_ServiceLayer_Utility_AsyncContextThread_Run_System_Func_System_Threading_Tasks_Task__" data-uid="Microsoft.SqlTools.ServiceLayer.Utility.AsyncContextThread.Run(System.Func{System.Threading.Tasks.Task})">Run(Func&lt;Task&gt;)</h4>
+              <h4 id="Microsoft_SqlTools_ServiceLayer_Utility_AsyncContextThread_Run_Func_Task__" data-uid="Microsoft.SqlTools.ServiceLayer.Utility.AsyncContextThread.Run(Func{Task})">Run(Func&lt;Task&gt;)</h4>
               <div class="markdown level1 summary"><p>Runs a task on the AsyncContextThread.</p>
 </div>
               <div class="markdown level1 conceptual"></div>
@@ -152,7 +152,7 @@ and establishing an AsyncContext in it.</p>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+                    <td><span class="xref">Func</span>&lt;<span class="xref">Task</span>&gt;</td>
                     <td><em>taskReturningFunc</em></td>
                     <td><p>A Func which returns the task to be run on the thread.</p>
 </td>
@@ -169,7 +169,7 @@ and establishing an AsyncContext in it.</p>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><span class="xref">System.Threading.Tasks.Task</span></td>
+                    <td><span class="xref">Task</span></td>
                     <td><p>A Task which can be used to monitor the thread for completion.</p>
 </td>
                   </tr>

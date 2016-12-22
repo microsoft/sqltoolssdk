@@ -86,7 +86,7 @@
               <h6><strong>Assembly</strong>:Microsoft.SqlTools.ServiceLayer.dll</h6>
               <h5 id="Microsoft_SqlTools_ServiceLayer_InteractionMetrics_1_syntax">Syntax</h5>
               <div class="codewrapper">
-                <pre><code class="lang-csharp hljs">public class InteractionMetrics&lt;T&gt;</code></pre>
+                <pre><code class="lang-csharp hljs">public class InteractionMetrics&lt;T&gt; : object</code></pre>
               </div>
               <h3 id="constructors">Constructors
               </h3>
@@ -179,7 +179,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, T&gt;</td>
+                    <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, T&gt;</td>
                     <td></td>
                   </tr>
                 </tbody>
@@ -188,12 +188,12 @@
               </h3>
               <span class="small pull-right mobile-hide">
                 <span class="divider">|</span>
-                <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_InteractionMetrics_1_UpdateMetrics_System_Double__0_System_Func_System_String__0__0__.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.InteractionMetrics%601.UpdateMetrics(System.Double%2C%600%2CSystem.Func%7BSystem.String%2C%600%2C%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_InteractionMetrics_1_UpdateMetrics_System_Double__0_Func_System_String__0__0__.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.InteractionMetrics%601.UpdateMetrics(System.Double%2C%600%2CFunc%7BSystem.String%2C%600%2C%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
                 <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/LanguageServices/InteractionMetrics.cs/#L71">View Source</a>
               </span>
-              <h4 id="Microsoft_SqlTools_ServiceLayer_InteractionMetrics_1_UpdateMetrics_System_Double__0_System_Func_System_String__0__0__" data-uid="Microsoft.SqlTools.ServiceLayer.InteractionMetrics`1.UpdateMetrics(System.Double,`0,System.Func{System.String,`0,`0})">UpdateMetrics(Double, T, Func&lt;String, T, T&gt;)</h4>
+              <h4 id="Microsoft_SqlTools_ServiceLayer_InteractionMetrics_1_UpdateMetrics_System_Double__0_Func_System_String__0__0__" data-uid="Microsoft.SqlTools.ServiceLayer.InteractionMetrics`1.UpdateMetrics(System.Double,`0,Func{System.String,`0,`0})">UpdateMetrics(Double, T, Func&lt;String, T, T&gt;)</h4>
               <div class="markdown level1 summary"><p>Update metric value given new number</p>
 </div>
               <div class="markdown level1 conceptual"></div>
@@ -222,7 +222,7 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td><span class="xref">System.Func</span>&lt;<span class="xref">System.String</span>, T, T&gt;</td>
+                    <td><span class="xref">Func</span>&lt;<span class="xref">System.String</span>, T, T&gt;</td>
                     <td><em>updateValueFactory</em></td>
                     <td></td>
                   </tr>

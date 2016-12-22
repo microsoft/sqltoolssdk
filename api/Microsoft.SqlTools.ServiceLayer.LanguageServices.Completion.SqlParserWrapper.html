@@ -86,18 +86,18 @@
               <h6><strong>Assembly</strong>:Microsoft.SqlTools.ServiceLayer.dll</h6>
               <h5 id="Microsoft_SqlTools_ServiceLayer_LanguageServices_Completion_SqlParserWrapper_syntax">Syntax</h5>
               <div class="codewrapper">
-                <pre><code class="lang-csharp hljs">public class SqlParserWrapper : ISqlParserWrapper</code></pre>
+                <pre><code class="lang-csharp hljs">public class SqlParserWrapper : object, ISqlParserWrapper</code></pre>
               </div>
               <h3 id="methods">Methods
               </h3>
               <span class="small pull-right mobile-hide">
                 <span class="divider">|</span>
-                <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_LanguageServices_Completion_SqlParserWrapper_FindCompletions_Microsoft_SqlServer_Management_SqlParser_Parser_ParseResult_System_Int32_System_Int32_Microsoft_SqlServer_Management_SqlParser_MetadataProvider_IMetadataDisplayInfoProvider_.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.LanguageServices.Completion.SqlParserWrapper.FindCompletions(Microsoft.SqlServer.Management.SqlParser.Parser.ParseResult%2CSystem.Int32%2CSystem.Int32%2CMicrosoft.SqlServer.Management.SqlParser.MetadataProvider.IMetadataDisplayInfoProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_LanguageServices_Completion_SqlParserWrapper_FindCompletions_ParseResult_System_Int32_System_Int32_IMetadataDisplayInfoProvider_.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.LanguageServices.Completion.SqlParserWrapper.FindCompletions(ParseResult%2CSystem.Int32%2CSystem.Int32%2CIMetadataDisplayInfoProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
                 <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/LanguageServices/Completion/SqlParserWrapper.cs/#L29">View Source</a>
               </span>
-              <h4 id="Microsoft_SqlTools_ServiceLayer_LanguageServices_Completion_SqlParserWrapper_FindCompletions_Microsoft_SqlServer_Management_SqlParser_Parser_ParseResult_System_Int32_System_Int32_Microsoft_SqlServer_Management_SqlParser_MetadataProvider_IMetadataDisplayInfoProvider_" data-uid="Microsoft.SqlTools.ServiceLayer.LanguageServices.Completion.SqlParserWrapper.FindCompletions(Microsoft.SqlServer.Management.SqlParser.Parser.ParseResult,System.Int32,System.Int32,Microsoft.SqlServer.Management.SqlParser.MetadataProvider.IMetadataDisplayInfoProvider)">FindCompletions(ParseResult, Int32, Int32, IMetadataDisplayInfoProvider)</h4>
+              <h4 id="Microsoft_SqlTools_ServiceLayer_LanguageServices_Completion_SqlParserWrapper_FindCompletions_ParseResult_System_Int32_System_Int32_IMetadataDisplayInfoProvider_" data-uid="Microsoft.SqlTools.ServiceLayer.LanguageServices.Completion.SqlParserWrapper.FindCompletions(ParseResult,System.Int32,System.Int32,IMetadataDisplayInfoProvider)">FindCompletions(ParseResult, Int32, Int32, IMetadataDisplayInfoProvider)</h4>
               <div class="markdown level1 summary"><p>Creates completion list given SQL script info</p>
 </div>
               <div class="markdown level1 conceptual"></div>
@@ -116,7 +116,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td><span class="xref">Microsoft.SqlServer.Management.SqlParser.Parser.ParseResult</span></td>
+                    <td><span class="xref">ParseResult</span></td>
                     <td><em>parseResult</em></td>
                     <td></td>
                   </tr>
@@ -131,7 +131,7 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td><span class="xref">Microsoft.SqlServer.Management.SqlParser.MetadataProvider.IMetadataDisplayInfoProvider</span></td>
+                    <td><span class="xref">IMetadataDisplayInfoProvider</span></td>
                     <td><em>displayInfoProvider</em></td>
                     <td></td>
                   </tr>
@@ -147,7 +147,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">Microsoft.SqlServer.Management.SqlParser.Intellisense.Declaration</span>&gt;</td>
+                    <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Declaration</span>&gt;</td>
                     <td></td>
                   </tr>
                 </tbody>

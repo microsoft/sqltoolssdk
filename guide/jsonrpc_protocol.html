@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Using the JSON-RPC API </title>
+    <title>JSON-RPC Protocol </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Using the JSON-RPC API ">
+    <meta name="title" content="JSON-RPC Protocol ">
     
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -67,8 +67,8 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content">
-              <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs2/docs/guide/using_the_host_process.md/#L1" class="pull-right mobile-hide"><span class="fa fa-github"></span> Improve this Doc</a>
-              <h1 id="using-the-json-rpc-api">Using the JSON-RPC API</h1>
+              <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/docs/guide/jsonrpc_protocol.md/#L1" class="pull-right mobile-hide"><span class="fa fa-github"></span> Improve this Doc</a>
+              <h1 id="json-rpc-protocol">JSON-RPC Protocol</h1>
               
 <p>The JSON-RPC API provides an host-agnostic interface for
 leveraging the core .NET API.</p>
@@ -83,28 +83,28 @@ string since different parts of the message format could be sent with different 
 &#39;workspace&#39; that the user has opened.  Generally this would map to a single top-level folder
 which contains all of the user&#39;s SQL script files for a given project.</p>
 <h2 id="messages-overview">Messages overview</h2>
+<p>The SQL Tools Service implements portions of the 
+<a href="https://github.com/Microsoft/language-server-protocol/blob/master/protocol.md">language service protocol</a>
+defined by VS Code.  Some portions of this protocol reference have been duplicated here for 
+convenience.  </p>
+<p>It additionally implements several other API to provide database management
+services such as connection management or query execution.</p>
+<p>This document provides the protocol specification for all the service&#39;s JSON-RPC APIs.</p>
 <p>General</p>
 <ul>
 <li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#initialize">initialize</a> </li>
 <li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#shutdown">shutdown</a> </li>
 <li><span class="emoji" shortcode="arrow_right">➡️</span> <a href="#exit">exit</a> </li>
 <li><span class="emoji" shortcode="arrow_right">➡️</span> <a href="#cancelRequest">$/cancelRequest</a></li>
+<li><span class="emoji" shortcode="arrow_right">➡️</span> <a href="#workspace_didChangeConfiguration">workspace/didChangeConfiguration</a> </li>
+<li><span class="emoji" shortcode="arrow_right">➡️</span> <a href="#workspace_didChangeWatchedFiles">workspace/didChangeWatchedFiles</a> </li>
 </ul>
-<p>Window</p>
+<p>Language Service</p>
 <ul>
 <li><span class="emoji" shortcode="arrow_left">⬅️</span> <a href="#window_showMessage">window/showMessage</a> </li>
 <li><span class="emoji" shortcode="arrow_right_hook">↪️</span> <a href="#window_showMessageRequest">window/showMessageRequest</a> </li>
 <li><span class="emoji" shortcode="arrow_left">⬅️</span> <a href="#window_logMessage">window/logMessage</a> </li>
 <li><span class="emoji" shortcode="arrow_left">⬅️</span> <a href="#telemetry_event">telemetry/event</a> </li>
-</ul>
-<p>Workspace</p>
-<ul>
-<li><span class="emoji" shortcode="arrow_right">➡️</span> <a href="#workspace_didChangeConfiguration">workspace/didChangeConfiguration</a> </li>
-<li><span class="emoji" shortcode="arrow_right">➡️</span> <a href="#workspace_didChangeWatchedFiles">workspace/didChangeWatchedFiles</a> </li>
-<li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#workspace_symbol">workspace/symbol</a> </li>
-</ul>
-<p>Document</p>
-<ul>
 <li><span class="emoji" shortcode="arrow_left">⬅️</span> <a href="#textDocument_publishDiagnostics">textDocument/publishDiagnostics</a> </li>
 <li><span class="emoji" shortcode="arrow_right">➡️</span> <a href="#textDocument_didChange">textDocument/didChange</a>  </li>
 <li><span class="emoji" shortcode="arrow_right">➡️</span> <a href="#textDocument_didClose">textDocument/didClose</a> </li>
@@ -115,19 +115,10 @@ which contains all of the user&#39;s SQL script files for a given project.</p>
 <li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#textDocument_hover">textDocument/hover</a> </li>
 <li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#textDocument_signatureHelp">textDocument/signatureHelp</a> </li>
 <li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#textDocument_references">textDocument/references</a> </li>
-<li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#textDocument_documentHighlight">textDocument/documentHighlight</a> </li>
-<li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#textDocument_documentSymbol">textDocument/documentSymbol</a> </li>
-<li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#textDocument_formatting">textDocument/formatting</a> </li>
-<li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#textDocument_rangeFormatting">textDocument/rangeFormatting</a> </li>
-<li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#textDocument_onTypeFormatting">textDocument/onTypeFormatting</a> </li>
 <li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#textDocument_definition">textDocument/definition</a> </li>
-<li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#textDocument_codeAction">textDocument/codeAction</a> </li>
-<li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#textDocument_codeLens">textDocument/codeLens</a> </li>
-<li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#codeLens_resolve">codeLens/resolve</a> </li>
-<li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#textDocument_documentLink">textDocument/documentLink</a> </li>
-<li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#documentLink_resolve">documentLink/resolve</a> </li>
-<li><span class="emoji" shortcode="leftwards_arrow_with_hook">↩️</span> <a href="#textDocument_rename">textDocument/rename</a> </li>
 </ul>
+<p>Connection Management</p>
+<p>Query Execution</p>
 <h1 id="message-protocol">Message Protocol</h1>
 <p>A message consists of two parts: a header section and the message body.  For now, there is
 only one header, <code>Content-Length</code>.  This header, written with ASCII encoding, specifies the
@@ -1180,7 +1171,7 @@ has no body and will always be <code>null</code>.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs2/docs/guide/using_the_host_process.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/docs/guide/jsonrpc_protocol.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

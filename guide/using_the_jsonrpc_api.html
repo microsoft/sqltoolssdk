@@ -5,11 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Enum TextDocumentSyncKind
-   </title>
+    <title>Using the JSON-RPC API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Enum TextDocumentSyncKind
-   ">
+    <meta name="title" content="Using the JSON-RPC API ">
     
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -58,7 +56,7 @@
           </div>
         </div>
       </header>
-      <div role="main" class="container body-content hide-when-search">
+      <div role="main" class="container body-content">
         
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
@@ -69,47 +67,70 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content">
+              <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/docs/guide/using_the_jsonrpc_api.md/#L1" class="pull-right mobile-hide"><span class="fa fa-github"></span> Improve this Doc</a>
+              <h1 id="using-the-json-rpc-api">Using the JSON-RPC API</h1>
               
-              
-              <h1 id="Microsoft_SqlTools_ServiceLayer_Hosting_Contracts_TextDocumentSyncKind" data-uid="Microsoft.SqlTools.ServiceLayer.Hosting.Contracts.TextDocumentSyncKind">Enum TextDocumentSyncKind
-              </h1>
-              <div class="markdown level0 summary"><p>Defines the document synchronization strategies that a server may support.</p>
-</div>
-              <div class="markdown level0 conceptual"></div>
-              <h6><strong>Namespace</strong>:Microsoft.SqlTools.ServiceLayer.Hosting.Contracts</h6>
-              <h6><strong>Assembly</strong>:Microsoft.SqlTools.ServiceLayer.dll</h6>
-              <h5 id="Microsoft_SqlTools_ServiceLayer_Hosting_Contracts_TextDocumentSyncKind_syntax">Syntax</h5>
-              <div class="codewrapper">
-                <pre><code class="lang-csharp hljs">public enum TextDocumentSyncKind : int</code></pre>
-              </div>
-              <h3 id="fields">Fields
-              </h3>
-              <table class="table table-bordered table-striped table-condensed">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                  </tr>
-                <thead>
-                <tbody>
-                  <tr>
-                    <td id="Microsoft_SqlTools_ServiceLayer_Hosting_Contracts_TextDocumentSyncKind_Full">Full</td>
-                    <td><p>Indicates that document changes are always sent with the full content.</p>
-</td>
-                  </tr>
-                  <tr>
-                    <td id="Microsoft_SqlTools_ServiceLayer_Hosting_Contracts_TextDocumentSyncKind_Incremental">Incremental</td>
-                    <td><p>Indicates that document changes are sent as incremental changes after
-the initial document content has been sent.</p>
-</td>
-                  </tr>
-                  <tr>
-                    <td id="Microsoft_SqlTools_ServiceLayer_Hosting_Contracts_TextDocumentSyncKind_None">None</td>
-                    <td><p>Indicates that documents should not be synced at all.</p>
-</td>
-                  </tr>
-                </tbody>
-              </thead></thead></table>
+<blockquote><p>NOTE: The <a href="../api/index.html">API Reference</a> is the best starting point for working directly with
+the .NET API.</p>
+</blockquote>
+<p>An example of using the JSON RPC API from a .Net Core console application is available at docs/samples/jsonrpc/netcore.<br>The following snippet provides a basic example of how to connect to a database and execute a query.</p>
+<pre><code class="lang-typescript">internal static async Task ExecuteQuery(string query)
+{    
+    // create a temporary &quot;workspace&quot; file
+    using (SelfCleaningTempFile queryTempFile = new SelfCleaningTempFile())
+    // create the client helper which wraps the client driver objects
+    using (ClientHelper testHelper = new ClientHelper())
+    {
+        // connnection details
+        ConnectParams connectParams = new ConnectParams();
+        connectParams.Connection = new ConnectionDetails();
+        connectParams.Connection.ServerName = &quot;localhost&quot;;
+        connectParams.Connection.DatabaseName = &quot;master&quot;;
+        connectParams.Connection.AuthenticationType = &quot;Integrated&quot;;
+
+        // connect to the database
+        await testHelper.Connect(queryTempFile.FilePath, connectParams);
+
+        // execute the query
+        QueryExecuteCompleteParams queryComplete = 
+            await testHelper.RunQuery(queryTempFile.FilePath, query);
+
+        if (queryComplete.BatchSummaries != null &amp;&amp; queryComplete.BatchSummaries.Length &gt; 0)
+        {
+            var batch = queryComplete.BatchSummaries[0];
+            if (batch.ResultSetSummaries != null &amp;&amp; batch.ResultSetSummaries.Length &gt; 0)
+            {
+                var resultSet = batch.ResultSetSummaries[0];
+
+                // retrive the results
+                QueryExecuteSubsetResult querySubset = await testHelper.ExecuteSubset(
+                    queryTempFile.FilePath, batch.Id, 
+                    resultSet.Id, 0, (int)resultSet.RowCount);
+
+                // print the header
+                foreach (var column in resultSet.ColumnInfo)
+                {
+                    Console.Write(column.ColumnName + &quot;, &quot;);
+                }
+                Console.Write(Environment.NewLine);
+
+                // print the rows
+                foreach (var row in querySubset.ResultSubset.Rows)
+                {
+                    for (int i = 0; i &lt; resultSet.ColumnInfo.Length; ++i)
+                    {
+                        Console.Write(row.GetValue(i) + &quot;, &quot;);
+                    }
+                    Console.Write(Environment.NewLine);
+                }
+            }                    
+        }
+
+        // close database connection
+        await testHelper.Disconnect(queryTempFile.FilePath);
+    }
+}
+</code></pre>
             </article>
           </div>
           
@@ -118,10 +139,7 @@ the initial document content has been sent.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_Hosting_Contracts_TextDocumentSyncKind.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.Hosting.Contracts.TextDocumentSyncKind%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/Hosting/Contracts/ServerCapabilities.cs/#L32" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/docs/guide/using_the_jsonrpc_api.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

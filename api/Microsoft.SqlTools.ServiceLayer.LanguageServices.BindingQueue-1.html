@@ -86,8 +86,7 @@
               <h6><strong>Assembly</strong>:Microsoft.SqlTools.ServiceLayer.dll</h6>
               <h5 id="Microsoft_SqlTools_ServiceLayer_LanguageServices_BindingQueue_1_syntax">Syntax</h5>
               <div class="codewrapper">
-                <pre><code class="lang-csharp hljs">public class BindingQueue&lt;T&gt;
-    where T : IBindingContext, new ()</code></pre>
+                <pre><code class="lang-csharp hljs">public class BindingQueue&lt;T&gt; : object where T : IBindingContext, new ()</code></pre>
               </div>
               <h3 id="constructors">Constructors
               </h3>
@@ -204,12 +203,12 @@
               </table>
               <span class="small pull-right mobile-hide">
                 <span class="divider">|</span>
-                <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_LanguageServices_BindingQueue_1_QueueBindingOperation_System_String_System_Func_Microsoft_SqlTools_ServiceLayer_LanguageServices_IBindingContext_System_Threading_CancellationToken_System_Object__System_Func_Microsoft_SqlTools_ServiceLayer_LanguageServices_IBindingContext_System_Object__System_Nullable_System_Int32__System_Nullable_System_Int32__.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.LanguageServices.BindingQueue%601.QueueBindingOperation(System.String%2CSystem.Func%7BMicrosoft.SqlTools.ServiceLayer.LanguageServices.IBindingContext%2CSystem.Threading.CancellationToken%2CSystem.Object%7D%2CSystem.Func%7BMicrosoft.SqlTools.ServiceLayer.LanguageServices.IBindingContext%2CSystem.Object%7D%2CSystem.Nullable%7BSystem.Int32%7D%2CSystem.Nullable%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_LanguageServices_BindingQueue_1_QueueBindingOperation_System_String_Func_Microsoft_SqlTools_ServiceLayer_LanguageServices_IBindingContext_CancellationToken_System_Object__Func_Microsoft_SqlTools_ServiceLayer_LanguageServices_IBindingContext_System_Object__System_Nullable_System_Int32__System_Nullable_System_Int32__.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.LanguageServices.BindingQueue%601.QueueBindingOperation(System.String%2CFunc%7BMicrosoft.SqlTools.ServiceLayer.LanguageServices.IBindingContext%2CCancellationToken%2CSystem.Object%7D%2CFunc%7BMicrosoft.SqlTools.ServiceLayer.LanguageServices.IBindingContext%2CSystem.Object%7D%2CSystem.Nullable%7BSystem.Int32%7D%2CSystem.Nullable%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
                 <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/LanguageServices/BindingQueue.cs/#L60">View Source</a>
               </span>
-              <h4 id="Microsoft_SqlTools_ServiceLayer_LanguageServices_BindingQueue_1_QueueBindingOperation_System_String_System_Func_Microsoft_SqlTools_ServiceLayer_LanguageServices_IBindingContext_System_Threading_CancellationToken_System_Object__System_Func_Microsoft_SqlTools_ServiceLayer_LanguageServices_IBindingContext_System_Object__System_Nullable_System_Int32__System_Nullable_System_Int32__" data-uid="Microsoft.SqlTools.ServiceLayer.LanguageServices.BindingQueue`1.QueueBindingOperation(System.String,System.Func{Microsoft.SqlTools.ServiceLayer.LanguageServices.IBindingContext,System.Threading.CancellationToken,System.Object},System.Func{Microsoft.SqlTools.ServiceLayer.LanguageServices.IBindingContext,System.Object},System.Nullable{System.Int32},System.Nullable{System.Int32})">QueueBindingOperation(String, Func&lt;IBindingContext, CancellationToken, Object&gt;, Func&lt;IBindingContext, Object&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;)</h4>
+              <h4 id="Microsoft_SqlTools_ServiceLayer_LanguageServices_BindingQueue_1_QueueBindingOperation_System_String_Func_Microsoft_SqlTools_ServiceLayer_LanguageServices_IBindingContext_CancellationToken_System_Object__Func_Microsoft_SqlTools_ServiceLayer_LanguageServices_IBindingContext_System_Object__System_Nullable_System_Int32__System_Nullable_System_Int32__" data-uid="Microsoft.SqlTools.ServiceLayer.LanguageServices.BindingQueue`1.QueueBindingOperation(System.String,Func{Microsoft.SqlTools.ServiceLayer.LanguageServices.IBindingContext,CancellationToken,System.Object},Func{Microsoft.SqlTools.ServiceLayer.LanguageServices.IBindingContext,System.Object},System.Nullable{System.Int32},System.Nullable{System.Int32})">QueueBindingOperation(String, Func&lt;IBindingContext, CancellationToken, Object&gt;, Func&lt;IBindingContext, Object&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;)</h4>
               <div class="markdown level1 summary"><p>Queue a binding request item</p>
 </div>
               <div class="markdown level1 conceptual"></div>
@@ -233,12 +232,12 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td><span class="xref">System.Func</span>&lt;<a class="xref" href="Microsoft.SqlTools.ServiceLayer.LanguageServices.IBindingContext.html">IBindingContext</a>, <span class="xref">System.Threading.CancellationToken</span>, <span class="xref">System.Object</span>&gt;</td>
+                    <td><span class="xref">Func</span>&lt;<a class="xref" href="Microsoft.SqlTools.ServiceLayer.LanguageServices.IBindingContext.html">IBindingContext</a>, <span class="xref">CancellationToken</span>, <span class="xref">System.Object</span>&gt;</td>
                     <td><em>bindOperation</em></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td><span class="xref">System.Func</span>&lt;<a class="xref" href="Microsoft.SqlTools.ServiceLayer.LanguageServices.IBindingContext.html">IBindingContext</a>, <span class="xref">System.Object</span>&gt;</td>
+                    <td><span class="xref">Func</span>&lt;<a class="xref" href="Microsoft.SqlTools.ServiceLayer.LanguageServices.IBindingContext.html">IBindingContext</a>, <span class="xref">System.Object</span>&gt;</td>
                     <td><em>timeoutOperation</em></td>
                     <td></td>
                   </tr>
