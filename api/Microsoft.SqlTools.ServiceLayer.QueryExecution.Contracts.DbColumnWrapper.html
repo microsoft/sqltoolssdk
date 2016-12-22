@@ -71,7 +71,7 @@
             <article class="content wrap" id="_content">
               
               <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="pull-right mobile-hide"><span class="fa fa-github"></span>Improve this Doc</a>
-              <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L17" class="pull-right mobile-hide">View Source</a>
+              <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs3/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L17" class="pull-right mobile-hide">View Source</a>
               <h1 id="Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper" data-uid="Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper">Class DbColumnWrapper
               </h1>
               <div class="markdown level0 summary"><p>Wrapper around a DbColumn, which provides extra functionality, but can be used as a
@@ -81,7 +81,8 @@ regular DbColumn</p>
               <div class="inheritance">
                 <h5>Inheritance</h5>
                   <div class="level0"><span class="xref">System.Object</span></div>
-                  <div class="level1"><span class="xref">DbColumnWrapper</span></div>
+                  <div class="level1"><span class="xref">System.Data.Common.DbColumn</span></div>
+                  <div class="level2"><span class="xref">DbColumnWrapper</span></div>
               </div>
               <h6><strong>Namespace</strong>:Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts</h6>
               <h6><strong>Assembly</strong>:Microsoft.SqlTools.ServiceLayer.dll</h6>
@@ -96,7 +97,7 @@ regular DbColumn</p>
                 <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper__ctor.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L183">View Source</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs3/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L183">View Source</a>
               </span>
               <h4 id="Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper__ctor" data-uid="Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.#ctor">DbColumnWrapper()</h4>
               <div class="markdown level1 summary"><p>Default constructor, used for deserializing JSON RPC only</p>
@@ -108,16 +109,16 @@ regular DbColumn</p>
               </div>
               <span class="small pull-right mobile-hide">
                 <span class="divider">|</span>
-                <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper__ctor_DbColumn_.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.%23ctor(DbColumn)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper__ctor_System_Data_Common_DbColumn_.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.%23ctor(System.Data.Common.DbColumn)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L60">View Source</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs3/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L60">View Source</a>
               </span>
-              <h4 id="Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper__ctor_DbColumn_" data-uid="Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.#ctor(DbColumn)">DbColumnWrapper(DbColumn)</h4>
+              <h4 id="Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper__ctor_System_Data_Common_DbColumn_" data-uid="Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.#ctor(System.Data.Common.DbColumn)">DbColumnWrapper(DbColumn)</h4>
               <div class="markdown level1 summary"><p>Constructor for a DbColumnWrapper</p>
 </div>
               <div class="markdown level1 conceptual"></div>
-              <h5 id="Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper__ctor_DbColumn__remarks">Remarks</h5>
+              <h5 id="Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper__ctor_System_Data_Common_DbColumn__remarks">Remarks</h5>
               <div class="markdown level1 remarks"><p>Most of this logic is taken from SSMS ColumnInfo class</p>
 </div>
               <h5 class="decalaration">Declaration</h5>
@@ -135,7 +136,7 @@ regular DbColumn</p>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><span class="xref">DbColumn</span></td>
+                    <td><span class="xref">System.Data.Common.DbColumn</span></td>
                     <td><em>column</em></td>
                     <td><p>The column we&#39;re wrapping around</p>
 </td>
@@ -149,7 +150,7 @@ regular DbColumn</p>
                 <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper_IsBytes.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.IsBytes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L192">View Source</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs3/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L192">View Source</a>
               </span>
               <h4 id="Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper_IsBytes" data-uid="Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.IsBytes">IsBytes</h4>
               <div class="markdown level1 summary"><p>Whether or not the column is bytes</p>
@@ -179,7 +180,7 @@ regular DbColumn</p>
                 <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper_IsChars.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.IsChars%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L197">View Source</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs3/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L197">View Source</a>
               </span>
               <h4 id="Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper_IsChars" data-uid="Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.IsChars">IsChars</h4>
               <div class="markdown level1 summary"><p>Whether or not the column is a character type</p>
@@ -209,7 +210,7 @@ regular DbColumn</p>
                 <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper_IsJson.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.IsJson%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L217">View Source</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs3/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L217">View Source</a>
               </span>
               <h4 id="Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper_IsJson" data-uid="Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.IsJson">IsJson</h4>
               <div class="markdown level1 summary"><p>Whether or not the column is JSON</p>
@@ -239,7 +240,7 @@ regular DbColumn</p>
                 <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper_IsSqlVariant.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.IsSqlVariant%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L202">View Source</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs3/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L202">View Source</a>
               </span>
               <h4 id="Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper_IsSqlVariant" data-uid="Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.IsSqlVariant">IsSqlVariant</h4>
               <div class="markdown level1 summary"><p>Whether or not the column is a SqlVariant type</p>
@@ -269,7 +270,7 @@ regular DbColumn</p>
                 <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper_IsUdt.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.IsUdt%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L207">View Source</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs3/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L207">View Source</a>
               </span>
               <h4 id="Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper_IsUdt" data-uid="Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.IsUdt">IsUdt</h4>
               <div class="markdown level1 summary"><p>Whether or not the column is a user-defined type</p>
@@ -299,7 +300,7 @@ regular DbColumn</p>
                 <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper_IsXml.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.IsXml%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L212">View Source</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs3/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L212">View Source</a>
               </span>
               <h4 id="Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper_IsXml" data-uid="Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper.IsXml">IsXml</h4>
               <div class="markdown level1 summary"><p>Whether or not the column is XML</p>
@@ -335,7 +336,7 @@ regular DbColumn</p>
                     <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_QueryExecution_Contracts_DbColumnWrapper.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.QueryExecution.Contracts.DbColumnWrapper%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L17" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs3/src/Microsoft.SqlTools.ServiceLayer/QueryExecution/Contracts/DbColumnWrapper.cs/#L17" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

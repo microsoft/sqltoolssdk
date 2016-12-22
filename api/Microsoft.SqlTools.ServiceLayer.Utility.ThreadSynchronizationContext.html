@@ -71,7 +71,7 @@
             <article class="content wrap" id="_content">
               
               <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_Utility_ThreadSynchronizationContext.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.Utility.ThreadSynchronizationContext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="pull-right mobile-hide"><span class="fa fa-github"></span>Improve this Doc</a>
-              <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/Utility/ThreadSynchronizationContext.cs/#L17" class="pull-right mobile-hide">View Source</a>
+              <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs3/src/Microsoft.SqlTools.ServiceLayer/Utility/ThreadSynchronizationContext.cs/#L17" class="pull-right mobile-hide">View Source</a>
               <h1 id="Microsoft_SqlTools_ServiceLayer_Utility_ThreadSynchronizationContext" data-uid="Microsoft.SqlTools.ServiceLayer.Utility.ThreadSynchronizationContext">Class ThreadSynchronizationContext
               </h1>
               <div class="markdown level0 summary"><p>Provides a SynchronizationContext implementation that can be used
@@ -82,7 +82,8 @@ own SynchronizationContext.</p>
               <div class="inheritance">
                 <h5>Inheritance</h5>
                   <div class="level0"><span class="xref">System.Object</span></div>
-                  <div class="level1"><span class="xref">ThreadSynchronizationContext</span></div>
+                  <div class="level1"><span class="xref">System.Threading.SynchronizationContext</span></div>
+                  <div class="level2"><span class="xref">ThreadSynchronizationContext</span></div>
               </div>
               <h6><strong>Namespace</strong>:Microsoft.SqlTools.ServiceLayer.Utility</h6>
               <h6><strong>Assembly</strong>:Microsoft.SqlTools.ServiceLayer.dll</h6>
@@ -97,7 +98,7 @@ own SynchronizationContext.</p>
                 <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_Utility_ThreadSynchronizationContext_EndLoop.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.Utility.ThreadSynchronizationContext.EndLoop%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/Utility/ThreadSynchronizationContext.cs/#L68">View Source</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs3/src/Microsoft.SqlTools.ServiceLayer/Utility/ThreadSynchronizationContext.cs/#L68">View Source</a>
               </span>
               <h4 id="Microsoft_SqlTools_ServiceLayer_Utility_ThreadSynchronizationContext_EndLoop" data-uid="Microsoft.SqlTools.ServiceLayer.Utility.ThreadSynchronizationContext.EndLoop">EndLoop()</h4>
               <div class="markdown level1 summary"><p>Ends the SynchronizationContext message loop.</p>
@@ -109,12 +110,12 @@ own SynchronizationContext.</p>
               </div>
               <span class="small pull-right mobile-hide">
                 <span class="divider">|</span>
-                <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_Utility_ThreadSynchronizationContext_Post_SendOrPostCallback_System_Object_.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.Utility.ThreadSynchronizationContext.Post(SendOrPostCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_Utility_ThreadSynchronizationContext_Post_System_Threading_SendOrPostCallback_System_Object_.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.Utility.ThreadSynchronizationContext.Post(System.Threading.SendOrPostCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/Utility/ThreadSynchronizationContext.cs/#L39">View Source</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs3/src/Microsoft.SqlTools.ServiceLayer/Utility/ThreadSynchronizationContext.cs/#L39">View Source</a>
               </span>
-              <h4 id="Microsoft_SqlTools_ServiceLayer_Utility_ThreadSynchronizationContext_Post_SendOrPostCallback_System_Object_" data-uid="Microsoft.SqlTools.ServiceLayer.Utility.ThreadSynchronizationContext.Post(SendOrPostCallback,System.Object)">Post(SendOrPostCallback, Object)</h4>
+              <h4 id="Microsoft_SqlTools_ServiceLayer_Utility_ThreadSynchronizationContext_Post_System_Threading_SendOrPostCallback_System_Object_" data-uid="Microsoft.SqlTools.ServiceLayer.Utility.ThreadSynchronizationContext.Post(System.Threading.SendOrPostCallback,System.Object)">Post(SendOrPostCallback, Object)</h4>
               <div class="markdown level1 summary"><p>Posts a request for execution to the SynchronizationContext.
 This will be executed on the SynchronizationContext&#39;s thread.</p>
 </div>
@@ -134,7 +135,7 @@ This will be executed on the SynchronizationContext&#39;s thread.</p>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><span class="xref">SendOrPostCallback</span></td>
+                    <td><span class="xref">System.Threading.SendOrPostCallback</span></td>
                     <td><em>callback</em></td>
                     <td><p>The callback to be invoked on the SynchronizationContext&#39;s thread.</p>
 </td>
@@ -153,7 +154,7 @@ the SynchronizationContext.</p>
                 <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_Utility_ThreadSynchronizationContext_RunLoopOnCurrentThread.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.Utility.ThreadSynchronizationContext.RunLoopOnCurrentThread%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/Utility/ThreadSynchronizationContext.cs/#L54">View Source</a>
+                <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs3/src/Microsoft.SqlTools.ServiceLayer/Utility/ThreadSynchronizationContext.cs/#L54">View Source</a>
               </span>
               <h4 id="Microsoft_SqlTools_ServiceLayer_Utility_ThreadSynchronizationContext_RunLoopOnCurrentThread" data-uid="Microsoft.SqlTools.ServiceLayer.Utility.ThreadSynchronizationContext.RunLoopOnCurrentThread">RunLoopOnCurrentThread()</h4>
               <div class="markdown level1 summary"><p>Starts the SynchronizationContext message loop on the current thread.</p>
@@ -174,7 +175,7 @@ the SynchronizationContext.</p>
                     <a href="https://github.com/Microsoft/sqltoolsservice/new/dev/docs/apispec/new?filename=Microsoft_SqlTools_ServiceLayer_Utility_ThreadSynchronizationContext.md&amp;value=---%0Auid%3A%20Microsoft.SqlTools.ServiceLayer.Utility.ThreadSynchronizationContext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Microsoft/sqltoolsservice/blob/dev/src/Microsoft.SqlTools.ServiceLayer/Utility/ThreadSynchronizationContext.cs/#L17" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Microsoft/sqltoolsservice/blob/feature/docs3/src/Microsoft.SqlTools.ServiceLayer/Utility/ThreadSynchronizationContext.cs/#L17" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
